@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueuingService2", "QueuingS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueuingService3", "QueuingService3\QueuingService3.csproj", "{EE57BE68-1BCC-450D-B7C2-E40570CA37DE}"
 EndProject
+Project("{A07B5EB6-E848-4116-A8D0-A826331D98C6}") = "DictionaryApplication1", "DictionaryApplication1\DictionaryApplication1.sfproj", "{D092F44E-2E5C-404B-BDD3-84CF38F7FE94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DictionaryService1", "DictionaryService1\DictionaryService1.csproj", "{9D2E4213-3F75-4143-83B0-226935FDCE2E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -55,6 +59,16 @@ Global
 		{EE57BE68-1BCC-450D-B7C2-E40570CA37DE}.Debug|x64.Build.0 = Debug|x64
 		{EE57BE68-1BCC-450D-B7C2-E40570CA37DE}.Release|x64.ActiveCfg = Release|x64
 		{EE57BE68-1BCC-450D-B7C2-E40570CA37DE}.Release|x64.Build.0 = Release|x64
+		{D092F44E-2E5C-404B-BDD3-84CF38F7FE94}.Debug|x64.ActiveCfg = Debug|x64
+		{D092F44E-2E5C-404B-BDD3-84CF38F7FE94}.Debug|x64.Build.0 = Debug|x64
+		{D092F44E-2E5C-404B-BDD3-84CF38F7FE94}.Debug|x64.Deploy.0 = Debug|x64
+		{D092F44E-2E5C-404B-BDD3-84CF38F7FE94}.Release|x64.ActiveCfg = Release|x64
+		{D092F44E-2E5C-404B-BDD3-84CF38F7FE94}.Release|x64.Build.0 = Release|x64
+		{D092F44E-2E5C-404B-BDD3-84CF38F7FE94}.Release|x64.Deploy.0 = Release|x64
+		{9D2E4213-3F75-4143-83B0-226935FDCE2E}.Debug|x64.ActiveCfg = Debug|x64
+		{9D2E4213-3F75-4143-83B0-226935FDCE2E}.Debug|x64.Build.0 = Debug|x64
+		{9D2E4213-3F75-4143-83B0-226935FDCE2E}.Release|x64.ActiveCfg = Release|x64
+		{9D2E4213-3F75-4143-83B0-226935FDCE2E}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
