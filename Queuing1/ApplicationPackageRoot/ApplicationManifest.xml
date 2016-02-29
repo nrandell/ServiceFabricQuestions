@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="Queuing1Type" ApplicationTypeVersion="1.0.1" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+   <Parameters>
+      <Parameter Name="QueuingService3_MinReplicaSetSize" DefaultValue="2" />
+      <Parameter Name="QueuingService3_PartitionCount" DefaultValue="1" />
+      <Parameter Name="QueuingService3_TargetReplicaSetSize" DefaultValue="3" />
+      <Parameter Name="QueuingService2_MinReplicaSetSize" DefaultValue="2" />
+      <Parameter Name="QueuingService2_PartitionCount" DefaultValue="1" />
+      <Parameter Name="QueuingService2_TargetReplicaSetSize" DefaultValue="3" />
+      <Parameter Name="QueuingService1_MinReplicaSetSize" DefaultValue="2" />
+      <Parameter Name="QueuingService1_PartitionCount" DefaultValue="1" />
+      <Parameter Name="QueuingService1_TargetReplicaSetSize" DefaultValue="3" />
+   </Parameters>
+   <ServiceManifestImport>
+      <ServiceManifestRef ServiceManifestName="QueuingService3Pkg" ServiceManifestVersion="1.0.1" />
+      <ConfigOverrides />
+   </ServiceManifestImport>
+   <ServiceManifestImport>
+      <ServiceManifestRef ServiceManifestName="QueuingService2Pkg" ServiceManifestVersion="1.0.0" />
+      <ConfigOverrides />
+   </ServiceManifestImport>
+   <ServiceManifestImport>
+      <ServiceManifestRef ServiceManifestName="QueuingService1Pkg" ServiceManifestVersion="1.0.0" />
+      <ConfigOverrides />
+   </ServiceManifestImport>
+   <DefaultServices>
+      <Service Name="QueuingService3">
+         <StatefulService ServiceTypeName="QueuingService3Type" TargetReplicaSetSize="[QueuingService3_TargetReplicaSetSize]" MinReplicaSetSize="[QueuingService3_MinReplicaSetSize]">
+            <UniformInt64Partition PartitionCount="[QueuingService3_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+         </StatefulService>
+      </Service>
+      <Service Name="QueuingService2">
+         <StatefulService ServiceTypeName="QueuingService2Type" TargetReplicaSetSize="[QueuingService2_TargetReplicaSetSize]" MinReplicaSetSize="[QueuingService2_MinReplicaSetSize]">
+            <UniformInt64Partition PartitionCount="[QueuingService2_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+         </StatefulService>
+      </Service>
+      <Service Name="QueuingService1">
+         <StatefulService ServiceTypeName="QueuingService1Type" TargetReplicaSetSize="[QueuingService1_TargetReplicaSetSize]" MinReplicaSetSize="[QueuingService1_MinReplicaSetSize]">
+            <UniformInt64Partition PartitionCount="[QueuingService1_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+         </StatefulService>
+      </Service>
+   </DefaultServices>
+</ApplicationManifest>

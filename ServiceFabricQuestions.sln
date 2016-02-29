@@ -9,6 +9,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NamingService1", "NamingSer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NamingService2", "NamingService2\NamingService2.csproj", "{C9849D99-057F-45C9-A8FE-FA6A8976F959}"
 EndProject
+Project("{A07B5EB6-E848-4116-A8D0-A826331D98C6}") = "Queuing1", "Queuing1\Queuing1.sfproj", "{FD226B66-6CBA-45B7-A8C6-EF696A0BF93A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueuingService1", "QueuingService1\QueuingService1.csproj", "{ECCD1115-77C5-4161-989C-76C5E142AA5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueuingService2", "QueuingService2\QueuingService2.csproj", "{051C0231-248F-4B07-96DA-9D69D3A555F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueuingService3", "QueuingService3\QueuingService3.csproj", "{EE57BE68-1BCC-450D-B7C2-E40570CA37DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -29,6 +37,24 @@ Global
 		{C9849D99-057F-45C9-A8FE-FA6A8976F959}.Debug|x64.Build.0 = Debug|x64
 		{C9849D99-057F-45C9-A8FE-FA6A8976F959}.Release|x64.ActiveCfg = Release|x64
 		{C9849D99-057F-45C9-A8FE-FA6A8976F959}.Release|x64.Build.0 = Release|x64
+		{FD226B66-6CBA-45B7-A8C6-EF696A0BF93A}.Debug|x64.ActiveCfg = Debug|x64
+		{FD226B66-6CBA-45B7-A8C6-EF696A0BF93A}.Debug|x64.Build.0 = Debug|x64
+		{FD226B66-6CBA-45B7-A8C6-EF696A0BF93A}.Debug|x64.Deploy.0 = Debug|x64
+		{FD226B66-6CBA-45B7-A8C6-EF696A0BF93A}.Release|x64.ActiveCfg = Release|x64
+		{FD226B66-6CBA-45B7-A8C6-EF696A0BF93A}.Release|x64.Build.0 = Release|x64
+		{FD226B66-6CBA-45B7-A8C6-EF696A0BF93A}.Release|x64.Deploy.0 = Release|x64
+		{ECCD1115-77C5-4161-989C-76C5E142AA5C}.Debug|x64.ActiveCfg = Debug|x64
+		{ECCD1115-77C5-4161-989C-76C5E142AA5C}.Debug|x64.Build.0 = Debug|x64
+		{ECCD1115-77C5-4161-989C-76C5E142AA5C}.Release|x64.ActiveCfg = Release|x64
+		{ECCD1115-77C5-4161-989C-76C5E142AA5C}.Release|x64.Build.0 = Release|x64
+		{051C0231-248F-4B07-96DA-9D69D3A555F3}.Debug|x64.ActiveCfg = Debug|x64
+		{051C0231-248F-4B07-96DA-9D69D3A555F3}.Debug|x64.Build.0 = Debug|x64
+		{051C0231-248F-4B07-96DA-9D69D3A555F3}.Release|x64.ActiveCfg = Release|x64
+		{051C0231-248F-4B07-96DA-9D69D3A555F3}.Release|x64.Build.0 = Release|x64
+		{EE57BE68-1BCC-450D-B7C2-E40570CA37DE}.Debug|x64.ActiveCfg = Debug|x64
+		{EE57BE68-1BCC-450D-B7C2-E40570CA37DE}.Debug|x64.Build.0 = Debug|x64
+		{EE57BE68-1BCC-450D-B7C2-E40570CA37DE}.Release|x64.ActiveCfg = Release|x64
+		{EE57BE68-1BCC-450D-B7C2-E40570CA37DE}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
