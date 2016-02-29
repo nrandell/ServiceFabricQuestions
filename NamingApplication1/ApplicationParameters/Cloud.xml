@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="fabric:/NamingApplication1" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+   <Parameters>
+      <Parameter Name="NamingService2_PartitionCount" Value="1" />
+      <Parameter Name="NamingService2_MinReplicaSetSize" Value="2" />
+      <Parameter Name="NamingService2_TargetReplicaSetSize" Value="3" />
+      <Parameter Name="NamingService1_PartitionCount" Value="1" />
+      <Parameter Name="NamingService1_MinReplicaSetSize" Value="2" />
+      <Parameter Name="NamingService1_TargetReplicaSetSize" Value="3" />
+   </Parameters>
+</Application>
