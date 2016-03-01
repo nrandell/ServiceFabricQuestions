@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="TimingApplication2Type" ApplicationTypeVersion="1.0.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+   <Parameters>
+      <Parameter Name="TimingActor1ActorService_PartitionCount" DefaultValue="10" />
+      <Parameter Name="TimingActor1ActorService_MinReplicaSetSize" DefaultValue="2" />
+      <Parameter Name="TimingActor1ActorService_TargetReplicaSetSize" DefaultValue="3" />
+   </Parameters>
+   <ServiceManifestImport>
+      <ServiceManifestRef ServiceManifestName="TimingActor1Pkg" ServiceManifestVersion="1.0.0" />
+   </ServiceManifestImport>
+   <ServiceManifestImport>
+      <ServiceManifestRef ServiceManifestName="TimingStateless1Pkg" ServiceManifestVersion="1.0.0" />
+   </ServiceManifestImport>
+   <DefaultServices>
+      <Service Name="TimingActor1ActorService" GeneratedIdRef="4a90ac4f-b187-43bb-ace7-ebdb26b31e33">
+         <StatefulService ServiceTypeName="TimingActor1ActorServiceType" TargetReplicaSetSize="[TimingActor1ActorService_TargetReplicaSetSize]" MinReplicaSetSize="[TimingActor1ActorService_MinReplicaSetSize]">
+            <UniformInt64Partition PartitionCount="[TimingActor1ActorService_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+         </StatefulService>
+      </Service>
+      <Service Name="TimingStateless1">
+         <StatelessService ServiceTypeName="TimingStateless1Type">
+            <SingletonPartition />
+         </StatelessService>
+      </Service>
+   </DefaultServices>
+</ApplicationManifest>
