@@ -37,10 +37,11 @@ namespace TimingService31
             var writers = 4;
             var queueCount = 1;
 
-
+            var cancelled = new SemaphoreSlim(0);
             cancelServicePartitionReplica.Register(() =>
             {
                 ServiceEventSource.Current.ServiceMessage(this, "Service cancellation requested");
+                cancelled.Release();
             });
             try
             {
@@ -68,11 +69,16 @@ namespace TimingService31
                     tasks.Add(ReaderRunner(queue, index, cancelServicePartitionReplica));
                 }
 
-                await Task.WhenAny(tasks);
-                ServiceEventSource.Current.ServiceMessage(this, "One task has finished");
+                ServiceEventSource.Current.ServiceMessage(this, "All running, now waiting ...");
+                await cancelled.WaitAsync();
+                ServiceEventSource.Current.ServiceMessage(this, "Cancelled, now waiting for tasks to finish");
                 var allTasks = Task.WhenAll(tasks);
                 var slowDelayTask = Task.Delay(TimeSpan.FromSeconds(10));
                 await Task.WhenAny(allTasks, slowDelayTask);
+                var totalCompleted = tasks.Count(t => t.IsCompleted);
+                var totalFaulted = tasks.Count(t => t.IsFaulted);
+                var totalCancelled = tasks.Count(t => t.IsCanceled);
+                ServiceEventSource.Current.ServiceMessage(this, "Total = {0}, Completed = {1}, Faulted = {2}, Cancelled = {3}", tasks.Count, totalCompleted, totalFaulted, totalCancelled);
                 if (slowDelayTask.IsCompleted)
                 {
                     ServiceEventSource.Current.ServiceMessage(this, "Tasks have not finished, exiting");
